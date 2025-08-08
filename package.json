@@ -1,0 +1,20 @@
+{
+  "name": "ai-recipe-generator",
+  "version": "1.0.0",
+  "description": "AI Recipe Generator from Fridge Items with Computer Vision",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start"
+  },
+  "keywords": ["ai", "recipe", "computer-vision", "nutrition", "food"],
+  "author": "AI Recipe Generator",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
