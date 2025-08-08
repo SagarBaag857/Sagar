@@ -1,0 +1,101 @@
+# FastAPI and ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Database
+sqlalchemy==2.0.23
+alembic==1.13.0
+psycopg2-binary==2.9.9
+
+# Redis and Celery
+redis==5.0.1
+celery[redis]==5.3.4
+
+# Authentication and Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6
+
+# HTTP requests
+httpx==0.25.2
+requests==2.31.0
+
+# Image processing and Computer Vision
+opencv-python-headless==4.8.1.78
+Pillow==10.1.0
+numpy==1.25.2
+scipy==1.11.4
+
+# Machine Learning and AI
+tensorflow==2.15.0
+torch==2.1.1
+torchvision==0.16.1
+transformers==4.36.0
+scikit-learn==1.3.2
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# OpenAI API
+openai==1.3.8
+
+# Data processing
+pandas==2.1.4
+openpyxl==3.1.2
+
+# Nutrition API
+python-dotenv==1.0.0
+
+# File handling
+aiofiles==23.2.1
+
+# Validation and parsing
+validators==0.22.0
+python-magic==0.4.27
+
+# Logging and monitoring
+structlog==23.2.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-cov==4.1.0
+httpx==0.25.2
+factory-boy==3.3.0
+
+# Development tools
+black==23.11.0
+flake8==6.1.0
+isort==5.12.0
+mypy==1.7.1
+
+# Additional utilities
+python-slugify==8.0.1
+email-validator==2.1.0
+phonenumbers==8.13.27
+pytz==2023.3
+click==8.1.7
+
+# Image format support
+imageio==2.33.0
+
+# Natural Language Processing
+nltk==3.8.1
+spacy==3.7.2
+
+# File type detection
+python-magic-bin==0.4.14; sys_platform == "win32"
+
+# Configuration
+pyyaml==6.0.1
+toml==0.10.2
+
+# Async support
+asyncpg==0.29.0
+
+# CORS
+python-cors==1.0.0
+
+# Environment variables
+python-decouple==3.8

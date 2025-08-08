@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-900 antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
+  /* Selection styles */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  ::-moz-selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  /* Focus styles */
+  .focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold text-gray-900 tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl leading-snug;
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl leading-snug;
+  }
+
+  h5 {
+    @apply text-lg lg:text-xl leading-normal;
+  }
+
+  h6 {
+    @apply text-base lg:text-lg leading-normal;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Buttons base styles */
+  button {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Input base styles */
+  input, textarea, select {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Image optimization */
+  img {
+    @apply max-w-full h-auto;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Button variants */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white border-primary-600 hover:bg-primary-700 hover:border-primary-700 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400 focus:ring-primary-500;
+  }
+
+  .btn-success {
+    @apply btn bg-green-600 text-white border-green-600 hover:bg-green-700 hover:border-green-700 focus:ring-green-500;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 text-white border-red-600 hover:bg-red-700 hover:border-red-700 focus:ring-red-500;
+  }
+
+  .btn-warning {
+    @apply btn bg-yellow-500 text-white border-yellow-500 hover:bg-yellow-600 hover:border-yellow-600 focus:ring-yellow-500;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-gray-700 border-transparent hover:bg-gray-100 focus:ring-primary-500;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  .btn-xl {
+    @apply px-8 py-4 text-lg;
+  }
+
+  /* Input styles */
+  .form-input {
+    @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 sm:text-sm;
+  }
+
+  .form-input-error {
+    @apply border-red-300 focus:border-red-500 focus:ring-red-500;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .form-error {
+    @apply mt-1 text-sm text-red-600;
+  }
+
+  .form-help {
+    @apply mt-1 text-sm text-gray-500;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-card border border-gray-200 overflow-hidden;
+  }
+
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-200;
+  }
+
+  .card-body {
+    @apply px-6 py-4;
+  }
+
+  .card-footer {
+    @apply px-6 py-4 border-t border-gray-200 bg-gray-50;
+  }
+
+  /* Recipe card styles */
+  .recipe-card {
+    @apply card hover:shadow-recipe transform hover:-translate-y-1 transition-all duration-300 cursor-pointer;
+  }
+
+  .recipe-card-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-800;
+  }
+
+  .badge-secondary {
+    @apply badge bg-gray-100 text-gray-800;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-800;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-100 text-yellow-800;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-100 text-red-800;
+  }
+
+  /* Nutrition badges */
+  .nutrition-badge-protein {
+    @apply badge bg-red-100 text-red-800;
+  }
+
+  .nutrition-badge-carbs {
+    @apply badge bg-blue-100 text-blue-800;
+  }
+
+  .nutrition-badge-fat {
+    @apply badge bg-yellow-100 text-yellow-800;
+  }
+
+  .nutrition-badge-fiber {
+    @apply badge bg-green-100 text-green-800;
+  }
+
+  /* Loading states */
+  .loading-spinner {
+    @apply animate-spin rounded-full border-4 border-gray-200 border-t-primary-600;
+  }
+
+  .loading-skeleton {
+    @apply bg-gray-200 rounded animate-pulse;
+  }
+
+  .loading-shimmer {
+    @apply relative overflow-hidden bg-gray-200 rounded;
+  }
+
+  .loading-shimmer::after {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer;
+    content: '';
+  }
+
+  /* Grid layouts */
+  .grid-recipes {
+    @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  .grid-ingredients {
+    @apply grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6;
+  }
+
+  /* Container styles */
+  .container-sm {
+    @apply max-w-2xl mx-auto px-4 sm:px-6;
+  }
+
+  .container-md {
+    @apply max-w-4xl mx-auto px-4 sm:px-6;
+  }
+
+  .container-lg {
+    @apply max-w-6xl mx-auto px-4 sm:px-6;
+  }
+
+  .container-xl {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section spacing */
+  .section-spacing {
+    @apply py-12 lg:py-16;
+  }
+
+  /* Glass morphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  /* Image upload area */
+  .upload-area {
+    @apply border-2 border-dashed border-gray-300 rounded-lg hover:border-primary-400 transition-colors duration-200;
+  }
+
+  .upload-area-active {
+    @apply border-primary-500 bg-primary-50;
+  }
+
+  /* Recipe difficulty indicators */
+  .difficulty-easy {
+    @apply text-green-600 bg-green-100;
+  }
+
+  .difficulty-medium {
+    @apply text-yellow-600 bg-yellow-100;
+  }
+
+  .difficulty-hard {
+    @apply text-red-600 bg-red-100;
+  }
+
+  /* Dietary restriction indicators */
+  .dietary-vegetarian {
+    @apply text-green-600 bg-green-100;
+  }
+
+  .dietary-vegan {
+    @apply text-emerald-600 bg-emerald-100;
+  }
+
+  .dietary-gluten-free {
+    @apply text-blue-600 bg-blue-100;
+  }
+
+  .dietary-keto {
+    @apply text-purple-600 bg-purple-100;
+  }
+
+  .dietary-paleo {
+    @apply text-orange-600 bg-orange-100;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  /* Text utilities */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+
+  /* Background utilities */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700;
+  }
+
+  .bg-gradient-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600;
+  }
+
+  .bg-gradient-hero {
+    @apply bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600;
+  }
+
+  /* Border utilities */
+  .border-gradient {
+    @apply border border-transparent bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-border;
+  }
+
+  /* Hide scrollbar */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Aspect ratios */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+
+  .aspect-recipe {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Safe area for mobile */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+
+    .print-break-before {
+      break-before: page;
+    }
+
+    .print-break-after {
+      break-after: page;
+    }
+  }
+}
