@@ -1,0 +1,9 @@
+body {
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+}
